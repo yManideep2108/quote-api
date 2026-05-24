@@ -19,5 +19,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Give Permission to mvnw
+        run: chmod +x mvnw
+
       - name: Build Project
         run: ./mvnw clean package -DskipTests
