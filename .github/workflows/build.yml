@@ -10,7 +10,7 @@ jobs:
 
     steps:
 
-      - name: Checkout Code
+      - name: Checkout quote-api
         uses: actions/checkout@v4
 
       - name: Setup Java
@@ -22,5 +22,15 @@ jobs:
       - name: Give Permission to mvnw
         run: chmod +x mvnw
 
-      - name: Build Project
+      - name: Clone common-avro
+        run: |
+          git clone https://github.com/yManideep2108/common-avro.git
+
+      - name: Build common-avro
+        run: |
+          cd common-avro
+          chmod +x mvnw
+          ./mvnw clean install -DskipTests
+
+      - name: Build quote-api
         run: ./mvnw clean package -DskipTests
