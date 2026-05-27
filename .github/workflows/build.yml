@@ -22,9 +22,15 @@ jobs:
       - name: Give Permission to mvnw
         run: chmod +x mvnw
 
-      - name: Clone common-avro
-        run: |
-          git clone https://github.com/yManideep2108/common-avro.git
+#      - name: Clone common-avro
+#        run: |
+#          git clone https://github.com/yManideep2108/common-avro.git
+
+      - name: Checkout common-avro
+        uses: actions/checkout@v4
+        with:
+          repository: yManideep2108/common-avro
+          path: common-avro
 
       - name: Build common-avro
         run: |
