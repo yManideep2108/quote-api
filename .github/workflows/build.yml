@@ -31,12 +31,9 @@ jobs:
 #        with:
 #          repository: yManideep2108/common-avro
 #          path: common-avro
-      - name: Checkout common-avro
-        uses: actions/checkout@v4
-        with:
-          repository: yManideep2108/common-avro
-          ref: main
-          path: common-avro
+      - name: Clone common-avro
+        run: |
+          git clone https://github.com/yManideep2108/common-avro.git
 
       - name: Build common-avro
         run: |
